@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    >
+
+    <ImageView
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logo_new"
+        tools:ignore="ContentDescription" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        android:shadowColor="#FAC3D5"
+        android:shadowDx="20.0"
+        android:shadowDy="20.0"
+        android:shadowRadius="4.5"
+        android:text="Powerby:杨宇轩29"
+        android:textColor="#3EA6F8"
+        android:textSize="40sp" />
+
+    <TextView  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        android:text="花朵识图"
+        android:textColor="#CE4F2F"
+        android:textSize="20sp"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/camera_btn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+
+                android:background="@drawable/xiangji" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+
+            android:orientation="horizontal"
+
+            >
+
+            <Button
+                android:id="@+id/album_btn"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/xiangce" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:id="@+id/camera_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="70dp"
+            android:background="@drawable/xiangji"
+            />
+
+        <Button
+            android:id="@+id/album_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="105dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/camera_btn"
+            android:background="@drawable/xiangce"/>
+
+    </RelativeLayout>
+    -->
+
+</LinearLayout>

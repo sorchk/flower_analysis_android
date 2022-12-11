@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--展示花卉识别结果-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+    <!--
+    <Button
+        android:id="@+id/quit_btn"
+        android:layout_gravity="left"
+        android:background="@drawable/guanbi"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        tools:ignore="RtlHardcoded" />
+    -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="80dp">
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/text_view_flower_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+
+            android:textSize="28sp"
+            android:textColor="#000000"
+            android:text="桃花"
+
+            tools:ignore="HardcodedText" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:id="@+id/img_show"
+            android:src="@drawable/flowershoe"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
