@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+import org.json.JSONObject;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -71,6 +72,12 @@ public class PhotoPreview extends Activity {
                 //super.handleMessage(msg);
                 //System.out.println(msg.what);
                 if (msg.what == CHANGE_UI) {
+                    JSONObject result =(JSONObject) msg.obj;
+                    try {
+                        flower_name = result.getJSONArray("result").getJSONObject(0).getString("name");
+                    }catch (Exception e){
+                        System.out.println("数据格式错误："+e.getMessage());
+                    }
                     //System.out.println(flower_name);
                     if (flower_name != null) {
                         Intent intent = new Intent(PhotoPreview.this, ShowAnswer.class);
@@ -99,7 +106,6 @@ public class PhotoPreview extends Activity {
              */
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                BitmapToFile(bitmap); //转成file文件，方便上传
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -134,7 +140,7 @@ public class PhotoPreview extends Activity {
                     //LoadingViewManager.with(PhotoPreview.this).setHintText("识别中…").build();
                     //上传图片
                     ImageUpload imageUpload = new ImageUpload();
-                    imageUpload.run(file);
+                    imageUpload.run(bitmap);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -191,10 +197,6 @@ public class PhotoPreview extends Activity {
                 mPic.setImageBitmap(bitmap);
             }
 
-            /**
-             * bitmap-->file
-             */
-            BitmapToFile(bitmap);
         }
         //如果图片由相册传来
         else if (flag == album){
@@ -217,16 +219,6 @@ public class PhotoPreview extends Activity {
     }
 
 
-    private void BitmapToFile(Bitmap bitmap1){
-        file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/1.png");  //定义一个路径
-        try {
-            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
-            bitmap1.compress(Bitmap.CompressFormat.JPEG, 100, bos);
-            bos.flush();
-            bos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
 }
